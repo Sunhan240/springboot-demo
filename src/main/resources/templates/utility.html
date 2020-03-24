@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymelaf 内嵌对象</title>
+</head>
+<body>
+<div>
+    <h2>内嵌对象</h2>
+
+    <!-- 格式化时间 -->
+    <p th:text="${#dates.format(date,'yyyy-MM-dd HH:mm:ss')}"></p>
+
+    <!-- 精确到天 -->
+    <p th:text="${#dates.createToday()}">sunhan</p>
+
+    <!-- 精确到秒 -->
+    <p th:text="${#dates.createNow()}">sunhan</p>
+
+    <!--  判断字符串是否为空-->
+    <p th:text="${#strings.isEmpty(username)}">username</p>
+
+    <!--  判断list是否为空-->
+    <p th:text="${#strings.listIsEmpty(users)}">username</p>
+
+    <!--  判断字符串长度-->
+    <p th:text="'字符串长度:'+${#strings.length(username)}">username</p>
+
+    <!--  拼接字符串-->
+    <p th:text="${#strings.concat(username,'han.sun','@xiaoi.com')}">username</p>
+
+    <!-- 创建自定义长度的字符串-->
+    <p th:text="${#strings.randomAlphanumeric(count)}">sunhan</p>
+
+    <br/>
+</div>
+
+</body>
+</html>

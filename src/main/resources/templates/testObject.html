@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymelaf 基本对象</title>
+</head>
+<body>
+<div>
+    <h1>基本对象</h1>
+    <p th:text="${#request.getAttribute('request')}"></p>
+    <br/>
+
+    <p th:text="${session.sessionId}"></p>
+    Local:<span th:text="${#locale.country}"></span>
+</div>
+
+</body>
+</html>

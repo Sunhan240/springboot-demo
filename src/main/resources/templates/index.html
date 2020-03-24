@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Example String </title>
+</head>
+<body>
+    <div >
+        <h1 th:text="${projectName}">Test project</h1>
+        <h2 th:text="'author：'+${username}">han.sun</h2>
+        <br/>
+        <span th:text="|emaill：${email}!|">email</span>
+    </div>
+</body>
+</html>
