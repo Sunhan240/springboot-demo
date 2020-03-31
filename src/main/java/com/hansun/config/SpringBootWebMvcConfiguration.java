@@ -14,6 +14,7 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.hansun.web.filter.XssFilter;
 import com.hansun.web.interceptor.AuthorityInterceptor;
 import com.hansun.web.interceptor.ParameterInterceptor;
+import com.hansun.web.interceptor.ResponseResultInterceptor;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,6 +40,7 @@ public class SpringBootWebMvcConfiguration implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new AuthorityInterceptor()).addPathPatterns("/interceptor/*");
         registry.addInterceptor(new ParameterInterceptor()).addPathPatterns("/interceptor/*");
+        registry.addInterceptor(new ResponseResultInterceptor()).addPathPatterns("/*");
     }
 
     @Bean

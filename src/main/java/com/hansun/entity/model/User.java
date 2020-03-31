@@ -8,6 +8,7 @@
  */
 package com.hansun.entity.model;
 
+import com.alibaba.fastjson.JSON;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +17,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -28,7 +30,7 @@ import javax.validation.constraints.NotEmpty;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class User implements Serializable {
 
     @NotEmpty(message = "用户名不能为空！")
     private String username;
@@ -51,5 +53,11 @@ public class User {
         this.username = username;
         this.password = password;
         this.age = age;
+    }
+
+
+    @Override
+    public String toString(){
+        return JSON.toJSONString(this);
     }
 }

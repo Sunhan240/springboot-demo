@@ -25,7 +25,7 @@ public class HelloController {
 
     private Logger log = LogManager.getLogger(HelloController.class);
 
-    @RequestMapping("/test1")
+    @RequestMapping("/hello")
     public String test1(String name) {
         log.info("进入了hello word测试接口。。。。。");
         return "HelloWorld！" + name + "，欢迎来到springboot世界!";
